@@ -143,7 +143,42 @@ for (WebElement option: options) {
     }
 }
 ```
+## Mouse Hover Actions
 
+**Steps to perform a mouse hover:**
+
+### 1. Import the Actions class:
+
+```java
+import org.openqa.selenium.interactions.Actions;
+```
+
+### 2. Create an Actions object:
+
+```java
+Actions actions = new Actions(driver);
+```
+
+### 3. Move to the element (hover):
+
+```java
+actions.moveToElement(element).perform();
+```
+
+**Example:**
+Suppose you have this HTML:
+
+```html
+<div class="menu">
+  <button id="products">Products</button>
+  <div class="submenu">
+    <a href="/laptops">Laptops</a>
+    <a href="/phones">Phones</a>
+  </div>
+</div>
+```
+
+When you hover over the Products button, a submenu appears.
 
 
 
