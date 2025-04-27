@@ -112,7 +112,7 @@ select.selectByVisibleText("India");  // selecting India
 System.out.println("Selected country: " + select.getFirstSelectedOption().getText());
 ```
 
-## ** Handling Dynamic Dropdowns**
+## **Handling Dynamic Dropdowns**
 
 ### 1. **Locate the Dropdown Element**
 ```html
@@ -125,18 +125,18 @@ System.out.println("Selected country: " + select.getFirstSelectedOption().getTex
   </ul>
 </div>
 ```
-### 2. ** Click on the dropdown to expand it.**
+### 2. **Click on the dropdown to expand it.**
 ```java
 WebElement dropdown = driver.findElement(By.cssSelector(".dropdown .selected"));
 dropdown.click();
 ```
-### 3. ** Get all the options**
+### 3. **Get all the options**
 ```java
 List<WebElement> options = driver.findElements(By.cssSelector(".dropdown .options li"));
 ```
-### 4. ** Loop through options and click the one you want**
+### 4. **Loop through options and click the one you want**
 ```java
-for (WebElement option : options) {
+for (WebElement option: options) {
     if (option.getText().equals("India")) {
         option.click();
         break;
