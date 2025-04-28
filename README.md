@@ -363,6 +363,143 @@ driver.findElement(By.xpath("//div//span"));
     ```text
     //tagname[contains(text(),'partialText')]
     ```
+
+## METHODS OF WEBDRIVER
+- 1. Browser Window Methods
+
+| Method | Description | Example |
+|:-------|:------------|:--------|
+| `get(String url)` | Open a URL | `driver.get("https://google.com");` |
+| `getTitle()` | Get the page title | `String title = driver.getTitle();` |
+| `getCurrentUrl()` | Get the current URL | `String url = driver.getCurrentUrl();` |
+| `getPageSource()` | Get the page HTML source code | `String source = driver.getPageSource();` |
+| `close()` | Close the current browser window | `driver.close();` |
+| `quit()` | Close all browser windows and end session | `driver.quit();` |
+
+---
+
+- 2. Navigation Methods
+
+| Method | Description | Example |
+|:-------|:------------|:--------|
+| `navigate().to(String url)` | Navigate to a URL | `driver.navigate().to("https://google.com");` |
+| `navigate().back()` | Go back to the previous page | `driver.navigate().back();` |
+| `navigate().forward()` | Move forward to the next page | `driver.navigate().forward();` |
+| `navigate().refresh()` | Refresh the current page | `driver.navigate().refresh();` |
+
+- 3. Browser Window Methods
+
+| Method | Description | Example |
+|:-------|:------------|:--------|
+| `get(String url)` | Open a URL | `driver.get("https://google.com");` |
+| `getTitle()` | Get the page title | `String title = driver.getTitle();` |
+| `getCurrentUrl()` | Get the current URL | `String url = driver.getCurrentUrl();` |
+| `getPageSource()` | Get the page HTML source code | `String source = driver.getPageSource();` |
+| `close()` | Close the current browser window | `driver.close();` |
+| `quit()` | Close all browser windows and end session | `driver.quit();` |
+
+- 4. Window Management Methods
+
+| Method | Description | Example |
+|:-------|:------------|:--------|
+| `manage().window().maximize()` | Maximize the window | `driver.manage().window().maximize();` |
+| `manage().window().minimize()` | Minimize the window | `driver.manage().window().minimize();` |
+| `manage().window().fullscreen()` | Fullscreen the window | `driver.manage().window().fullscreen();` |
+| `manage().window().setSize(Dimension size)` | Set window size | `driver.manage().window().setSize(new Dimension(1024, 768));` |
+
+- 5. Timeout Methods
+
+| Method | Description | Example |
+|:-------|:------------|:--------|
+| `manage().timeouts().implicitlyWait(Duration time)` | Set implicit wait time | `driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));` |
+| `manage().timeouts().pageLoadTimeout(Duration time)` | Set page load timeout | `driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));` |
+| `manage().timeouts().scriptTimeout(Duration time)` | Set script timeout | `driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(20));` |
+
+- 6. Cookie Methods
+
+| Method | Description | Example |
+|:-------|:------------|:--------|
+| `manage().getCookies()` | Get all cookies | `Set<Cookie> cookies = driver.manage().getCookies();` |
+| `manage().getCookieNamed(String name)` | Get cookie by name | `Cookie cookie = driver.manage().getCookieNamed("session_id");` |
+| `manage().addCookie(Cookie cookie)` | Add a cookie | `driver.manage().addCookie(new Cookie("username", "himansu"));` |
+| `manage().deleteCookieNamed(String name)` | Delete cookie by name | `driver.manage().deleteCookieNamed("username");` |
+| `manage().deleteAllCookies()` | Delete all cookies | `driver.manage().deleteAllCookies();` |
+
+- 7. SwitchTo Methods
+
+| Method | Description | Example |
+|:-------|:------------|:--------|
+| `switchTo().frame(int index)` | Switch to frame by index | `driver.switchTo().frame(0);` |
+| `switchTo().frame(String nameOrId)` | Switch to frame by name or ID | `driver.switchTo().frame("frameName");` |
+| `switchTo().frame(WebElement frameElement)` | Switch to frame using WebElement | `driver.switchTo().frame(driver.findElement(By.id("frameId")));` |
+| `switchTo().parentFrame()` | Switch to parent frame | `driver.switchTo().parentFrame();` |
+| `switchTo().defaultContent()` | Switch to default content | `driver.switchTo().defaultContent();` |
+| `switchTo().window(String windowHandle)` | Switch to another window or tab | `driver.switchTo().window(windowHandle);` |
+| `switchTo().alert()` | Switch to alert popup | `driver.switchTo().alert().accept();` |
+
+- 8. Finding Elements Methods
+
+| Method | Description | Example |
+|:-------|:------------|:--------|
+| `findElement(By locator)` | Find a single element | `WebElement element = driver.findElement(By.id("username"));` |
+| `findElements(By locator)` | Find multiple elements | `List<WebElement> links = driver.findElements(By.tagName("a"));` |
+
+----------
+
+## WEBELEMENTMETHODS
+
+| Method | Description | Example |
+|:-------|:------------|:--------|
+| `click()` | Click the element | `driver.findElement(By.id("loginBtn")).click();` |
+| `sendKeys(CharSequence... keysToSend)` | Enter text into a text box | `driver.findElement(By.id("username")).sendKeys("himansu");` |
+| `clear()` | Clear the text field | `driver.findElement(By.id("username")).clear();` |
+| `getText()` | Get the visible text of the element | `String text = driver.findElement(By.id("msg")).getText();` |
+| `getAttribute(String attributeName)` | Get the value of a specific attribute | `String value = driver.findElement(By.id("username")).getAttribute("value");` |
+| `getCssValue(String propertyName)` | Get the value of a CSS property | `String color = driver.findElement(By.id("btn")).getCssValue("color");` |
+| `getTagName()` | Get the tag name of the element | `String tag = driver.findElement(By.id("logo")).getTagName();` |
+| `isDisplayed()` | Check if the element is visible | `boolean isVisible = driver.findElement(By.id("popup")).isDisplayed();` |
+| `isEnabled()` | Check if the element is enabled | `boolean isEnabled = driver.findElement(By.id("submit")).isEnabled();` |
+| `isSelected()` | Check if a checkbox or radio button is selected | `boolean isChecked = driver.findElement(By.id("remember")).isSelected();` |
+| `submit()` | Submit a form | `driver.findElement(By.id("formLogin")).submit();` |
+
+## Actions Class Methods
+
+| Method | Description | Example |
+|:-------|:------------|:--------|
+| `click()` | Click at the current mouse location | `new Actions(driver).click().perform();` |
+| `click(WebElement element)` | Click on a specific element | `new Actions(driver).click(element).perform();` |
+| `doubleClick()` | Double-click at the current mouse location | `new Actions(driver).doubleClick().perform();` |
+| `doubleClick(WebElement element)` | Double-click on a specific element | `new Actions(driver).doubleClick(element).perform();` |
+| `contextClick()` | Right-click at the current mouse location | `new Actions(driver).contextClick().perform();` |
+| `contextClick(WebElement element)` | Right-click on a specific element | `new Actions(driver).contextClick(element).perform();` |
+| `moveToElement(WebElement element)` | Hover mouse over an element | `new Actions(driver).moveToElement(element).perform();` |
+| `dragAndDrop(WebElement source, WebElement target)` | Drag source element and drop onto target element | `new Actions(driver).dragAndDrop(source, target).perform();` |
+| `sendKeys(CharSequence keys)` | Send keys (keyboard actions) | `new Actions(driver).sendKeys(Keys.ENTER).perform();` |
+| `keyDown(Keys key)` | Press and hold a key | `new Actions(driver).keyDown(Keys.CONTROL).perform();` |
+| `keyUp(Keys key)` | Release a pressed key | `new Actions(driver).keyUp(Keys.CONTROL).perform();` |
+
+## JavascriptExecutor Methods
+
+| Method | Description | Example |
+|:-------|:------------|:--------|
+| `executeScript(String script, Object... args)` | Execute JavaScript code in the browser | `((JavascriptExecutor) driver).executeScript("alert('Hello World');");` |
+| `executeAsyncScript(String script, Object... args)` | Execute asynchronous JavaScript code | `((JavascriptExecutor) driver).executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 5000);");` |
+
+## Select Class Methods
+
+| Method | Description | Example |
+|:-------|:------------|:--------|
+| `selectByVisibleText(String text)` | Select option by visible text | `new Select(driver.findElement(By.id("country"))).selectByVisibleText("India");` |
+| `selectByIndex(int index)` | Select option by index | `new Select(driver.findElement(By.id("country"))).selectByIndex(2);` |
+| `selectByValue(String value)` | Select option by value attribute | `new Select(driver.findElement(By.id("country"))).selectByValue("IN");` |
+| `getOptions()` | Get all options from dropdown | `List<WebElement> options = new Select(driver.findElement(By.id("country"))).getOptions();` |
+| `getFirstSelectedOption()` | Get the first selected option | `WebElement selected = new Select(driver.findElement(By.id("country"))).getFirstSelectedOption();` |
+| `isMultiple()` | Check if dropdown allows multiple selections | `boolean multiple = new Select(driver.findElement(By.id("country"))).isMultiple();` |
+| `deselectAll()` | Deselect all selected options (only for multi-select) | `new Select(driver.findElement(By.id("languages"))).deselectAll();` |
+| `deselectByVisibleText(String text)` | Deselect option by visible text | `new Select(driver.findElement(By.id("languages"))).deselectByVisibleText("English");` |
+| `deselectByIndex(int index)` | Deselect option by index | `new Select(driver.findElement(By.id("languages"))).deselectByIndex(1);` |
+| `deselectByValue(String value)` | Deselect option by value | `new Select(driver.findElement(By.id("languages"))).deselectByValue("en");` |
+
   
 
 
