@@ -180,6 +180,83 @@ Suppose you have this HTML:
 
 When you hover over the Products button, a submenu appears.
 
+## LOCATORSTARTEGY
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Locator Strategies Example</title>
+</head>
+<body>
+
+<h1>Welcome to My Website</h1>
+
+<form id="loginForm">
+    <input type="text" id="username" name="username" placeholder="Enter Username" class="input-field">
+    <input type="password" id="password" name="password" placeholder="Enter Password" class="input-field">
+    <button type="submit" class="btn btn-login">Login</button>
+</form>
+
+<a href="/forgot-password" id="forgotLink">Forgot Password?</a>
+
+</body>
+</html>
+```
+
+### 1. ID Locator
+
+```java
+ WebElement username = driver.findElement(By.id("username"));
+        username.sendKeys("testUser");
+```
+
+### 2. Name Locator
+
+```java
+ WebElement password = driver.findElement(By.name("password"));
+        password.sendKeys("testPass");
+```
+
+### 3. Class Name Locator
+
+```java
+ WebElement loginButton = driver.findElement(By.className("btn-login"));
+        loginButton.click();
+```
+
+### 4. Tag Name Locator
+
+```java
+WebElement heading = driver.findElement(By.tagName("h1"));
+        System.out.println("Page Heading: " + heading.getText());
+```
+
+### 5. Link Text Locator
+
+```java
+ WebElement forgotLink = driver.findElement(By.linkText("Forgot Password?"));
+        forgotLink.click();
+```
+
+### 6. Partial Link Text Locator
+
+```java
+ WebElement partialForgotLink = driver.findElement(By.partialLinkText("Forgot"));
+        partialForgotLink.click();
+```
+### 7. CSS Selector Locator
+
+-ID
+```java
+driver.findElement(By.cssSelector("#username"));
+```
+**Syntax**
+### 8. XPath Locator
+
+
+
+
 
 
 
