@@ -247,12 +247,125 @@ WebElement heading = driver.findElement(By.tagName("h1"));
 ```
 ### 7. CSS Selector Locator
 
--ID
+- ID
 ```java
 driver.findElement(By.cssSelector("#username"));
 ```
-**Syntax**
+**Syntax**-# is used for ID.
+- Class Name
+```java
+driver.findElement(By.cssSelector(".btn-login"));
+```
+**Syntax**-. is used for Class Name.
+- Attribute
+```java
+driver.findElement(By.cssSelector("input[name='username']"));
+```
+**Syntax**: tagname[attribute='value']
+- Indexing
+```java
+WebElement element = driver.findElement(By.cssSelector("div:nth-child(1)"));
+```
+**Syntax**:tag:nth-child(index)
+- Parent-Child (Direct Child)
+```java
+driver.findElement(By.cssSelector("div > span"));
+```
+**Syntax**:
+```text
+parent > child
+```
+- Parent-Child (Any Descendant)
+```java
+driver.findElement(By.cssSelector("div span"));
+```
+**Syntax**:
+
+```text
+parent descendant
+```
+- Regular Expression
+  - ^= (starts with)
+  ```java
+  driver.findElement(By.cssSelector("input[name^='user']"));
+  ```
+  **Syntax**:
+  ```text
+  tagname[attribute^='value']
+  ```
+  - $= (ends with)
+  ```java
+  driver.findElement(By.cssSelector("input[name$='name']"));
+  ```
+  **Syntax**:
+  ```text
+  tagname[attribute$='value']
+  ```
+  - *= (contains)
+  ```java
+  driver.findElement(By.cssSelector("input[name*='pass']"));
+  ```
+  **Syntax**:
+  ```text
+  tagname[attribute*='value']
+  ```
+
 ### 8. XPath Locator
+- Attribute
+```java
+driver.findElement(By.xpath("//input[@name='password']"));
+```
+**Syntax**: //tagname[@attribute='value']
+- Indexing
+```java
+// Select the second button with class='submit-btn'
+WebElement element = driver.findElement(By.xpath("(//button[@class='submit-btn'])[2]"));
+```
+**Syntax**:xpath_expression[index]
+- Parent-Child (Direct Child)
+```java
+driver.findElement(By.xpath("//div/span"));
+```
+**Syntax**:
+```text
+//parent/child
+```
+- Parent-Child (Any Descendant)
+```java
+driver.findElement(By.xpath("//div//span"));
+```
+**Syntax**:
+```text
+//ancestor//descendant
+```
+- Regular Expression
+  - contains()
+    ```java
+    driver.findElement(By.xpath("//input[contains(@name, 'pass')]"));
+    ```
+  **Syntax**:
+   ```text
+      //tagname[contains(@attribute,'partialValue')]
+    ```
+  - starts-with()
+    ```java
+    driver.findElement(By.xpath("//input[starts-with(@id, 'user')]"));
+    ```
+  **Syntax**:
+    ```text
+    //tagname[starts-with(@attribute,'partialStart')]
+    ```
+  - Match text using contains()
+    ```java
+    driver.findElement(By.xpath("//button[contains(text(), 'Login')]"));
+    ```
+    **Syntax**:
+    ```text
+    //tagname[contains(text(),'partialText')]
+    ```
+  
+
+
 
 
 
