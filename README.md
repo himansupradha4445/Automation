@@ -500,8 +500,43 @@ driver.findElement(By.xpath("//div//span"));
 | `deselectByIndex(int index)` | Deselect option by index | `new Select(driver.findElement(By.id("languages"))).deselectByIndex(1);` |
 | `deselectByValue(String value)` | Deselect option by value | `new Select(driver.findElement(By.id("languages"))).deselectByValue("en");` |
 
-  
 
+## TEST CASE and TEST SUIT
+
+### Test Case : It is a set of steps used to verify a particular functionality of an application.
+EXAMPLE : Web Application Login
+
+- **Test Case ID**: TC001  
+- **Title**: Verify login with valid credentials  
+- **Description**: Ensure the user can log in successfully with valid credentials.
+
+🔹 Pre-Conditions
+- User is on the login page
+- Valid credentials exist in the system
+
+🔹 Test Steps
+1. Launch the application URL  
+2. Enter a valid username: `user@example.com`  
+3. Enter a valid password: `password123`  
+4. Click on the **Login** button
+
+🔹 Expected Result
+- The user should be redirected to the **Dashboard/Home** page.
+
+---
+
+### Test Suits : It is a collection of test cases, logically grouped together to test a specific module or functionalty.
+
+EXAMPLE: User Login Module  
+This test suite contains multiple test cases related to the Login feature of the application.
+
+| Test Case ID | Test Case Description                      |
+|--------------|---------------------------------------------|
+| TC001        | Login with valid credentials               |
+| TC002        | Login with invalid password                |
+| TC003        | Login with empty username/password fields  |
+| TC004        | Reset password flow                        |
+| TC005        | Login page UI elements presence            |
 
 
 
